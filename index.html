@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!--Google fonts-->
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles/main.css"/>
         <meta charset="utf-8">
         <title>Java notes</title>
@@ -9,35 +11,93 @@
         <main id="main-doc">
             
             <nav id="navbar">
-                <header>Java Notes</header>
-                <a class="nav-link" href="#Handy_Classes_and_Methods">Handy Classes and Methods</a>
-                <a class="nav-link" href="#Networking">Networking</a>
-                <a class="nav-link" href="#Serialization">Serialization</a>
-                <a class="nav-link" href="#File_IO">File IO</a>
-                <a class="nav-link" href="#Inheritance">Inheritance</a>
+                <header id="navbar-title">Java Notes</header>
+                <div id="link-container">
+                    <a class="nav-link" href="#Handy_Classes_and_Methods">Handy Classes and Methods</a>
+                    <a class="nav-link" href="#Networking">Networking</a>
+                    <a class="nav-link" href="#Serialization">Serialization</a>
+                    <a class="nav-link" href="#File_IO">File IO</a>
+                    <a class="nav-link" href="#Inheritance">Inheritance</a>
+                </div>
             </nav>
 
-
-            <section id="Handy_Classes_and_Methods" class="main-section">
-                <header>Handy Classes and Methods</header>
-            </section>
-
-            <section id="Networking" class="main-section">
-                <header>Networking</header>
-            </section>
-            
-            <section id="Serialization" class="main-section">
-                <header>Serialization</header>
-            </section>
-            
-            <section id="File_IO" class="main-section">
-                <header>File IO</header>
-            </section>
-            
-            <section id="Inheritance" class="main-section">
-                <header>Inheritance</header>
-            </section>
-        
+            <div id="content">
+                <section id="Handy_Classes_and_Methods" class="main-section">
+                    <header>Handy Classes and Methods</header>
+                    <article>
+                        <h2 class="sub-section">String Builder</h2>
+                            <h3>Package</h3>
+                            <p>java.lang</p>
+                            <h3>Useful methods</h3>
+                            <ul>
+                                <li>
+                                    <code>reverse()</code>
+                                    <p>Reverses contents of the object that called it.</p>
+                                    <code class="multi-line-code">
+                                        // "hello" -> "olleh"<br>
+                                        // "Yeehaw" -> "waheeY"
+                                    </code>
+                                </li>
+                                <li>
+                                    <code>append(arg)</code>
+                                    <p>appends (to add to the end of something) the argument passed to the StringBuilder object.</p>
+                                    <code class="multi-line-code">
+                                        //builder's content is "hello"
+                                        builder.append(" world");
+                                        // builder's content is "hello world"
+                                    </code>
+                                </li>
+                            </ul>
+                    </section>
+                </article>
+                <section id="Networking" class="main-section">
+                    <header>Networking</header>
+                    <h2 class="sub-section">Simple Client-Server Architecture</h2>
+                    <p>The common client-server interaction is established no different in java.</p>
+                    <img id="client-serv-img" src="https://i.stack.imgur.com/yiw9m.png" alt="image of client-server connection in java"/>
+                </section>
+                
+                <section id="Serialization" class="main-section">
+                    <header>Serialization</header>
+                    <h2 class="sub-section">Streams</h2>
+                    <p>Data moves in streams from one place to another. Think of a stream as a highway, tunnel or road. There are two types of streams:</p>
+                    <ol>
+                        <li>
+                            <h3>Connection streams</h3>
+                            <p>Represent a connection to a source or destination like a</p>
+                            <ul>
+                                <li>File</li>
+                                <li>Network sockets</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h3>Chain streams</h3>
+                            <p>Allow for a higher level input and output of data but must be chained to a connection stream to connect to a source or destination.
+                            </p>
+                        </li>
+                    </ol>
+                </section>
+                
+                <section id="File_IO" class="main-section">
+                    <header>File IO</header>
+                    <h2 class="sub-section">The Java File IO Class</h2>
+                    <p>Lives in the <code>java.io</code> package of course.</p>
+                    <p>A file object represents the pathname (NOT the file contents) of a file or directory and is a MUCH safer way to represent a file (or directory) name than a mere String.</p>
+                    <p>Some really neat methods the File class has:</p>
+                    <ul>
+                        <li><code>mkdir()</code> -> makes a directory at the pathname the object refers to.</li>
+                        <li><code>list()</code> -> returns a <code>String[]</code> with the names of the files within a directory.</li>
+                        <li><code>getAbsolutePath()</code> -> returns a <code>String</code> with the absolute path of a file or directory.</li>
+                        <li><code>delete()</code> -> deletes a file or directory (returns true if succesful). A directory can only be deleted if it is empty.</li>
+                    </ul>
+                </section>
+                
+                <section id="Inheritance" class="main-section">
+                    <header>Inheritance</header>
+                    <h2 class="sub-section">Interfaces</h2>
+                    <p>An interface is a type of class which can be implemented outside of the inheritance tree. This means it can be implemented on classes on different inheritance trees and the true benefit of these comes when your good ol' friend polymorphism knocks on the door.</p>
+                </section>
+            </div>
         </main>
     </body>
 </html>
